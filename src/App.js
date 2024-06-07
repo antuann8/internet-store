@@ -1,4 +1,5 @@
 import styles from "./App.module.scss";
+import Clock from "./components/Clock/Clock";
 import Header from "./components/Header/Header";
 import Mobile from "./components/Mobile/Mobile";
 import Services from "./components/Services/Services";
@@ -11,6 +12,7 @@ function App() {
       <Slider />
       <Services />
       <Mobile />
+      <Clock />
     </div>
   );
 }
