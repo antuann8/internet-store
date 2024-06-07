@@ -1,0 +1,6 @@
+.container {
+  display: block;
+  margin: 0 auto;
+  width: 1140px;
+  grid-template-columns: repeat(4, 1fr);
+}

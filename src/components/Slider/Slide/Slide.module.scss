@@ -10,6 +10,7 @@
   align-self: center;
   justify-self: center;
   padding-bottom: 20px;
+  margin-left: 60px;
 }
 
 .img {
@@ -78,6 +79,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     position: relative;
+    justify-content: center;
   }
 
   .mobile {
@@ -87,14 +89,12 @@
   .img {
     z-index: 1;
     opacity: 0.5;
+    position: relative;
   }
 
   .text {
     z-index: 2;
-    align-self: center;
-    justify-self: center;
-    margin-top: 300px;
-    margin-left: 100px;
+    margin-right: 100px;
   }
 }
 
