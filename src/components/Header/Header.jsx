@@ -1,29 +1,30 @@
 import styles from "./Header.module.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AppContext } from "../../provider/provider";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, setIsOpen } = useContext(AppContext);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 768 && isOpen) {
-        document.body.classList.add(styles.bodyPosition);
-      } else {
-        document.body.classList.remove(styles.bodyPosition);
-      }
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (window.innerWidth <= 768 && isOpen) {
+  //       document.body.classList.add(styles.bodyPosition);
+  //     } else {
+  //       document.body.classList.remove(styles.bodyPosition);
+  //     }
+  //   };
 
-    window.addEventListener("resize", handleResize);
-    handleResize();
+  //   window.addEventListener("resize", handleResize);
+  //   handleResize();
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isOpen]);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, [isOpen]);
 
   return (
     <>
