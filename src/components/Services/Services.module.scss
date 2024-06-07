@@ -4,7 +4,7 @@
   display: grid;
   margin: 0 auto;
   max-width: 100%; /* Ограничить максимальную ширину контейнера */
-  width: 1140px;
+  width: 1296px;
   // grid-template-columns: repeat(4, 1fr);
   grid-template-areas: "x x x x";
   column-gap: 20px;
@@ -29,7 +29,7 @@
 
 .text {
   grid-area: text;
-  width: 219px;
+  width: 264px;
   color: #aeaeae;
   font-size: 16.8px;
   line-height: 26.88px;
