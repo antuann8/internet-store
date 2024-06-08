@@ -7,6 +7,7 @@ import News from "./components/News/News";
 import Reviews from "./components/Reviews/Reviews";
 import Services from "./components/Services/Services";
 import Slider from "./components/Slider/Slider";
+import Subscribe from "./components/Subscribe/Subscribe";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Discount />
       <News />
       <Reviews />
+      <Subscribe />
     </div>
   );
 }
