@@ -16,7 +16,7 @@ function App() {
       <Mobile />
       <Clock />
       <Discount />
-      {/* <News /> */}
+      <News />
     </div>
   );
 }
