@@ -3,7 +3,7 @@ import { posts } from "../../constants/news";
 
 export default function News() {
   return (
-    <div className={styles.container}>
+    <div id="news" className={styles.container}>
       <h1 className={styles.header}>НОВОСТИ</h1>
       <div className={styles.posts_container}>
         {posts.map((post, index) => (

@@ -36,12 +36,12 @@ export default function Header() {
         </div>
         <div className={styles["nav-container"]}>
           <nav className={`${styles.nav} ${isOpen ? styles.open : ""}`}>
-            <a href="#">ДОМОЙ</a>
-            <a href="#">СЕРВИС</a>
-            <a href="#">ТЕЛЕФОНЫ</a>
-            <a href="#">ЧАСЫ</a>
-            <a href="#">СКИДКИ</a>
-            <a href="#">БЛОГ</a>
+            <a href="#home">ДОМОЙ</a>
+            <a href="#service">СЕРВИС</a>
+            <a href="#mobile">ТЕЛЕФОНЫ</a>
+            <a href="#clock">ЧАСЫ</a>
+            <a href="#discount">СКИДКИ</a>
+            <a href="#news">БЛОГ</a>
             <div className={styles.icons}>
               <a href="#">
                 <img src="images/search-icon.png" alt="Поиск" />

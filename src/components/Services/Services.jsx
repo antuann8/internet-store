@@ -1,9 +1,10 @@
 import styles from "./Services.module.scss";
 import { servicesData } from "./../../constants/services";
+import { useEffect } from "react";
 
 export default function Services() {
   return (
-    <div className={styles.container}>
+    <div id="service" className={styles.container}>
       {servicesData.map((item, index) => (
         <div className={styles.services} key={index}>
           <img className={styles.img} src={item.icon} />

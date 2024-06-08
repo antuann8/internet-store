@@ -18,7 +18,7 @@ export default function Mobile() {
   };
 
   return (
-    <div className={styles.container}>
+    <div id="mobile" className={styles.container}>
       <h2 className={styles.header}>МОБИЛЬНАЯ ПРОДУКЦИЯ</h2>
       <div className={styles.slider}>
         {mobileSlides

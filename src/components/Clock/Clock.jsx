@@ -15,7 +15,9 @@ export default function Clock() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.header}>СМАРТ ЧАСЫ</h2>
+      <h2 id="clock" className={styles.header}>
+        СМАРТ ЧАСЫ
+      </h2>
       <div className={styles.slider}>
         {clockSlides
           .slice(currentIndex, currentIndex + 4)

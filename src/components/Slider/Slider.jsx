@@ -6,7 +6,7 @@ import RightArrow from "./RightArrow/RightArrow";
 
 const Slider = () => {
   return (
-    <div className={styles.wrapper}>
+    <div id="home" className={styles.wrapper}>
       <LeftArrow />
       <div className={styles.container}>
         <Slide />
