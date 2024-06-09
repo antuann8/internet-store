@@ -4,10 +4,15 @@ import {
   dotsIndex,
   dotsSmallIndex,
 } from "./../../constants/mobile";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { handleBacketClick } from "../../functions/backet";
+import { AppContext } from "../../provider/provider";
 
 export default function Mobile() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { cartCount, setCartCount, itemCounts, setItemCounts } =
+    useContext(AppContext);
+  const [backetId, setBacketId] = useState([]);
 
   const goToSlide = (index) => {
     if (index === 0) {
@@ -15,6 +20,15 @@ export default function Mobile() {
     } else if (index === 1 && currentIndex !== mobileSlides.length - 4) {
       setCurrentIndex(currentIndex + 1);
     }
+  };
+
+  const handleBacketClick = (id) => {
+    setCartCount(cartCount + 1);
+    setBacketId((prev) => [...prev, id]);
+    setItemCounts((prevCounts) => ({
+      ...prevCounts,
+      [id]: (prevCounts[id] || 0) + 1,
+    }));
   };
 
   return (
@@ -27,7 +41,10 @@ export default function Mobile() {
             <div key={index} className={`${styles.slide}`}>
               <div className={styles.backet}>
                 <img className={styles.img} src={slide.img} />
-                <button className={styles.button}>
+                <button
+                  onClick={() => handleBacketClick(slide.id)}
+                  className={styles.button}
+                >
                   <div className={styles.in_container}>
                     <span className={styles.in}>В КОРЗИНУ</span>{" "}
                     <img

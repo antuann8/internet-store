@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
@@ -6,6 +6,25 @@ export const AppProvider = ({ children }) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [isLeftActive, setIsLeftActive] = useState(false);
   const [isRightActive, setIsRightActive] = useState(false);
+  const [cartCount, setCartCount] = useState(() => {
+    // Инициализировать значение из localStorage
+    const savedCartCount = localStorage.getItem("cartCount");
+    return savedCartCount !== null ? JSON.parse(savedCartCount) : 0;
+  });
+  const [itemCounts, setItemCounts] = useState(() => {
+    const savedItemCounts = localStorage.getItem("itemCounts");
+    return savedItemCounts !== null ? JSON.parse(savedItemCounts) : 0;
+  });
+
+  useEffect(() => {
+    // Сохранить значение в localStorage при изменении cartCount
+    localStorage.setItem("cartCount", JSON.stringify(cartCount));
+  }, [cartCount]);
+
+  useEffect(() => {
+    // Сохранить значение в localStorage при изменении cartCount
+    localStorage.setItem("itemCounts", JSON.stringify(itemCounts));
+  }, [itemCounts]);
 
   return (
     <AppContext.Provider
@@ -18,6 +37,10 @@ export const AppProvider = ({ children }) => {
         setIsLeftActive,
         isRightActive,
         setIsRightActive,
+        cartCount,
+        setCartCount,
+        itemCounts,
+        setItemCounts,
       }}
     >
       {children}

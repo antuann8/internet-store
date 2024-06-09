@@ -1,6 +1,14 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import styles from "./App.module.scss";
 import About from "./components/About/About";
+import Backet from "./components/Backet/Backet";
+import BacketHeader from "./components/BacketHeader/BacketHeader";
 import Clock from "./components/Clock/Clock";
 import Discount from "./components/Discount/Discount";
 import Footer from "./components/Footer/Footer";
@@ -13,35 +21,9 @@ import Services from "./components/Services/Services";
 import Slider from "./components/Slider/Slider";
 import Subscribe from "./components/Subscribe/Subscribe";
 
-function App() {
-  useEffect(() => {
-    const handleAnchorClick = (event) => {
-      const offset = 100; // Высота вашего заголовка
-      const targetId = event.target.getAttribute("href")?.substring(1);
-      if (targetId) {
-        event.preventDefault();
-        const targetElement = document.getElementById(targetId);
-        window.scrollTo({
-          top: targetElement.offsetTop - offset,
-          behavior: "smooth",
-        });
-      }
-    };
-
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    anchorLinks.forEach((link) =>
-      link.addEventListener("click", handleAnchorClick)
-    );
-
-    return () => {
-      anchorLinks.forEach((link) =>
-        link.removeEventListener("click", handleAnchorClick)
-      );
-    };
-  }, []);
-
+const Home = () => {
   return (
-    <div className={styles.container}>
+    <>
       <Header />
       <Slider />
       <Services />
@@ -54,7 +36,29 @@ function App() {
       <MoreGoods />
       <About />
       <Footer />
-    </div>
+    </>
+  );
+};
+
+const BacketWrapper = () => {
+  return (
+    <>
+      <BacketHeader />
+      <Backet />
+    </>
+  );
+};
+
+function App() {
+  return (
+    <Router>
+      <div className={styles.container}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/backet" element={<BacketWrapper />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

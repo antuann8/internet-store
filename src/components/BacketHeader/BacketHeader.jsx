@@ -1,9 +1,9 @@
-import styles from "./Header.module.scss";
+import styles from "./BacketHeader.module.scss";
 import { useState, useEffect, useContext } from "react";
 import { AppContext } from "../../provider/provider";
 import { useNavigate } from "react-router-dom";
 
-export default function Header() {
+export default function BacketHeader() {
   const { isOpen, setIsOpen, cartCount } = useContext(AppContext);
   const navigate = useNavigate();
 
@@ -44,41 +44,6 @@ export default function Header() {
           <nav className={`${styles.nav} ${isOpen ? styles.open : ""}`}>
             <a onClick={handleHomeClick} href="/" className={styles.active}>
               ДОМОЙ
-            </a>
-            <a
-              onClick={handleAnchorClick}
-              href="#service"
-              className={styles.active}
-            >
-              СЕРВИС
-            </a>
-            <a
-              onClick={handleAnchorClick}
-              href="#mobile"
-              className={styles.active}
-            >
-              ТЕЛЕФОНЫ
-            </a>
-            <a
-              onClick={handleAnchorClick}
-              href="#clock"
-              className={styles.active}
-            >
-              ЧАСЫ
-            </a>
-            <a
-              onClick={handleAnchorClick}
-              href="#discount"
-              className={styles.active}
-            >
-              СКИДКИ
-            </a>
-            <a
-              onClick={handleAnchorClick}
-              href="#news"
-              className={styles.active}
-            >
-              БЛОГ
             </a>
             <div className={styles.icons}>
               <a href="#">
